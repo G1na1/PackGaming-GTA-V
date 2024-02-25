@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,200;1,400;1,700&display=swap');
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0; margin: 0;
+    text-decoration: none !important;
+    outline: none; border: none;
+    transition: all .3s linear;
+    box-sizing: border-box;
+}
+
+$main-color: #2ecc71;
+$white: #fff;
+$black: #111;
+$light-color: rgb(182, 182, 182);
+$light-bg:#f6f6f6;
+$dark-bg: rgb(36, 36, 36);
+$dark-bg-header: #1d1d1d;
+$border:.1rem solid $black;
+$box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap:2rem;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+
+    &::-webkit-scrollbar{
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track{
+        background: $black;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background: $main-color;
+        border-radius: .5rem;
+    }
+}
+
+
+body{
+    background: $black;
+    height: 150vh;
+}
+
+
+
+section{
+    padding: 5rem 20%;
+}
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    padding: 2rem 15%;
+
+
+
+    &.active{
+        padding: 1rem 15%;
+        background: $black;
+        box-shadow: $box-shadow;
+    }
+
+    .logo{
+
+        img{
+            width: 65%;
+        }
+    }
+    
+    .nav-bar{
+        
+        a{
+            font-size: 1.5rem;
+            color: $white;
+            margin: 0 1.2rem;
+            font-weight: bolder; 
+
+            &:hover{
+                color: $main-color;
+            }
+
+
+            i{
+                font-size: 1.5rem;
+                color: $main-color;
+                margin-right: 1rem;
+            }
+        }
+
+    }
+
+    #menu-bar{
+        font-size: 1.5rem;
+        color: $white;
+        cursor: pointer;
+        display: none;
+    }
+    
+}
+
+
+.home{
+    height: 96vh;
+    background: url(../images/Home_BG.png) no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .item-1{
+        text-align: center;
+        
+
+        img{
+            width: 100%;
+            background: transparent;
+        }
+
+        .content{
+
+            .second-btn{
+                color: $white;
+                background: transparent;
+                border: .1rem solid $main-color;
+                border-radius: 1rem;
+                padding: 1rem 2rem;
+                font-size: 2rem;
+                font-weight: bolder;
+                margin-bottom: 5rem;
+                letter-spacing: .1rem;
+
+                &:hover{
+                    color: $main-color;
+                    border: .1rem solid $white;
+                }
+            }
+
+            p{
+                font-size: 1.5rem;
+                color: $light-color;
+                letter-spacing: .3rem;
+                margin-top: 3rem;
+            }
+
+            h3{
+                font-size: 2rem;
+                color: $white;
+
+
+                i{
+                    font-size: 1.5rem;
+                    color: $main-color;
+                    margin-right: .8rem;
+                }
+            }
+
+
+        }
+    }
+    
+
+}
+
+
+.video{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container{
+
+        iframe{
+            width: 900px;
+            height: 450px;
+            border: .05rem solid $main-color;
+            border-radius: 1rem;
+        }
+    }
+
+}
+
+.buy-gta{
+    
+    .container{
+
+        .box-container{
+            @include grid(30rem);
+            gap: 2rem;
+
+            .box{
+                padding: 3rem 2rem;
+                border-radius: 1rem;
+                text-align: left;
+                background: url(../images/box-pictures.jpg) no-repeat;
+                background-position: center;
+                background-size: cover;
+                
+                &:hover{
+                    background: url(../images/box-pictures.jpg) no-repeat;
+                    transition: all 4s linear;
+                }
+
+                .heading-box{
+                    
+                    h4{
+                        font-size: 1.5rem;
+                        display: inline-block;
+                        color: $white;
+                        border-bottom: .2rem solid $main-color;
+                    }
+                }
+
+                .content{
+
+                    h3{
+                        font-size: 3rem;
+                        color: $white;
+                        text-transform: uppercase;
+                        letter-spacing: .1rem;
+                        margin-top: 1.5rem;
+
+                        span{
+                            color: $main-color;
+                            display: block;
+                        }
+                    }
+
+                    p{
+                        font-size: 1.5rem;
+                        padding: 1.5rem 0;
+                        line-height: 2;
+                        color: $light-color;
+                    }
+
+                    .btn{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: $white;
+                        background: #000;
+                        border: .1rem solid $main-color;
+                        border-radius: 1rem;
+                        padding: 1rem 2rem;
+                        font-size: 2rem;
+                        font-weight: bolder;
+                        letter-spacing: .1rem;
+
+                        &:hover{
+                            color: $main-color;
+                            border: .1rem solid $white;
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+
+.selections{
+    margin-top: 5rem;
+
+    .box-container{
+        
+
+            .box{
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 4rem;
+
+                &.active{
+                    flex-direction:row-reverse;
+                }
+
+                .content{
+                    flex: 1 1 42rem;
+                    text-align: left;
+
+                    h3{
+                        font-size: 3rem;
+                        color: $white;
+                        display: inline-block;
+                        border-bottom: .1rem solid $main-color; 
+                        letter-spacing: .2rem;
+                    }
+
+                    p{
+                        font-size: 1.5rem;
+                        color: $light-color;
+                        line-height: 2;
+                        padding: 1.5rem 0;
+                    }
+
+                }
+
+                .image{
+                    flex: 1 1 42rem;
+
+                    img{
+                        width: 100%;
+                        border-radius: 1rem;
+                        clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+                    }
+                }
+            }
+    }
+}
+
+.social{
+    padding-bottom: 4rem;
+
+    .social-heading{
+        text-align: left;
+
+        h3{
+            font-size: 2.5rem;
+            color: $white;
+            letter-spacing: .2rem;
+            text-transform: uppercase;
+        }
+
+        p{
+            font-size: 1.5rem;
+            color: $light-color;
+            padding: 1.5rem 0;
+            line-height: 2;
+        }
+    }
+
+
+    .box-container{
+        @include grid(42rem);
+        
+        .box{
+            width:760px;
+            height: 320px;
+            padding: 8rem 2rem;
+            text-align: left;
+            display: block;
+            
+
+            .image{
+
+                img{
+                    width: 100%;
+                }
+            }
+
+            .content{
+                padding-left: 5rem;
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                transform: rotate(-4deg);
+                
+
+                .content-1{
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+                    text-align: center;
+
+                    h3{
+                        font-size: 4rem;
+                        color: $white;
+
+                        span{
+                            font-size: 3rem;
+                            padding-left: .5rem;
+                        }
+                    }
+
+                    p{
+                        font-size: 2rem;
+                        color: $white;
+                        text-transform: uppercase;
+                        font-weight: bolder;
+                    }
+                }
+
+                .link{
+
+                    a{
+                        font-size: 3rem;
+                        color: $main-color;
+                        text-decoration: none;
+                        margin-left: 13rem;
+
+                        &:hover{
+                            color: $white;
+                        }
+                    }
+
+                }
+
+                
+            }
+
+        }
+    }
+
+    .box-last{
+        width: 100%;
+        height: 320px;
+        margin-left: 2rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        
+
+        .image{
+            flex: 0 0 42rem;
+            margin-top: 5rem;
+            margin-right: 6rem;
+
+            img{
+                width: 100%;
+            }
+        }
+
+        .content{
+            flex: 0 0 42rem;
+            text-align: right;
+            transform: rotate(-5deg);
+
+            .subscribe{
+                font-size: 3rem;
+                color: $white;
+                border: .1rem solid $main-color;
+                border-radius: 2rem;
+                padding: 1rem 4rem;
+                letter-spacing: .2rem;
+
+                &:hover{
+                    color: $main-color;
+                    background: $black;
+                }
+            }
+        }
+        
+    }
+
+}
